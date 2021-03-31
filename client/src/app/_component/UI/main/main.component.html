@@ -1,0 +1,25 @@
+<div class="row" style="margin:auto;justify-content:center;width:87.5%">
+    <div class="col">
+        <h2 align="center">Last Books</h2>
+        <main-slider [BOOKS]="BOOKS"></main-slider>
+    </div>
+    <div class="col">
+        <h2 align="center">Best Books</h2>
+        <main-slider [BOOKS]="BOOKS"></main-slider>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h2 align="center">Last Books</h2><br>
+        <p align="center">
+            Search: <input type="text">
+        </p><br>
+        <div class="row" style="margin:auto;justify-content:center;width:87.5%">
+            <div class="col-1" align="center" *ngFor="let i of BOOKS">
+                <img src="{{i.imageUrl}}" style="width:90%"/><br>
+                {{i.name}}<br>
+                {{i.author}}<br>
+            </div>
+        </div>
+    </div>
+</div>

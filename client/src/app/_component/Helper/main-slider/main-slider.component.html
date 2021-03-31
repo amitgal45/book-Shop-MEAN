@@ -1,0 +1,21 @@
+<div class="row" *ngIf="BOOKS" style="align-items: center;align-content:center;height:400px">
+    <div class="col" align="center">
+        <button (click)="goBack()"> < </button>
+    </div>
+    <div class="col" align="center" *ngIf="BOOKS[_selectedBook[0]]" style="margin:auto;" >
+        <img src="{{BOOKS[_selectedBook[0]].imageUrl}}" style="width:75%"/>
+    </div>
+    <div class="col" align="center" *ngIf="BOOKS[_selectedBook[1]]">
+        <img src="{{BOOKS[_selectedBook[1]].imageUrl}}" style="width:100%"/>
+        <p>
+            {{BOOKS[_selectedBook[1]].name}} <br>
+            
+        </p>
+    </div>
+    <div class="col" align="center" *ngIf="BOOKS[_selectedBook[2]]" style="margin:auto;">
+        <img src="{{BOOKS[_selectedBook[2]].imageUrl}}" style="width:75%"/>
+    </div>
+    <div class="col" align="center">
+        <button (click)="goFoward()"> > </button>
+    </div>
+</div>
