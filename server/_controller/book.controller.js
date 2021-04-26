@@ -11,8 +11,11 @@ exports.getAllBooks = async (req,res,next)=>{
 
 exports.getBookByID = async (req,res,next)=>{
     let bookid = req.params.id;
+    console.log(bookid)
     return await BookService.getBookByID(bookid)
     .then(book=>{
+        console.log(book)
+
         res.status(200).json(book)
     })
     .catch(err=>next(err))

@@ -1,4 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {ChatService} from './_service/chat.service'
 import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
 
 @Component({
@@ -8,6 +9,26 @@ import { SidebarComponent } from '@syncfusion/ej2-angular-navigations';
  
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
+  title
+
+
+  constructor(private chatService: ChatService){
+
+  }
+
+  ngOnInit(){
+
+    this.chatService.getNewNotification().subscribe((notification: string) => {
+      if(notification!="")
+        alert(notification)
+    })
+  }
+
+  sendNotification(){
+    this.chatService.sendNotification("New Notification")
+  }
+
+
 
 }

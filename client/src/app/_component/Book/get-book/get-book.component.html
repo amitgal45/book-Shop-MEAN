@@ -1,0 +1,129 @@
+<div dir="rtl" class="row" *ngIf="book" style="border-top:2px solid #CCCCCC;border-bottom:1px solid #CCCCCC;margin-bottom:1%;
+    padding: 6px 0;
+    font-size: 19px;
+    line-height: 25px;
+    justify-content: center;
+">
+<div class="container">
+    <p style="width: 60%;">
+        <a routerLink="/">דף הבית</a> -> {{book.name}}
+    </p>
+</div>
+
+
+
+</div>
+<div class="container">
+
+
+    <div class="row" dir="rtl" style="justify-content: center;">
+        <div class="col-2" *ngIf="book" style="display: flex;align-items: flex-start;">
+            <img src="{{book.imageUrl}}" style="width: 100%;" />
+        </div>
+        <div class="col-6" *ngIf="book">
+            <div style="width: 100%;border-bottom:1px solid #dddddd;padding-bottom: 20px;">
+                <h1 style="color: #16542D;
+            font-size: 50px;
+            font-weight: 500;
+            z-index: 5;
+            padding: 0px 0;
+            margin: 0;
+            line-height: 40px;">
+                    {{book.name}}
+                </h1>
+                <p style="color: #048745;font-size:24px;">
+                    {{book.author}}
+                    <br>
+                </p>
+            </div>
+            <div style="width:100%;
+                padding: 5px 0 30px 0;
+                margin: 0 0 20px 0;
+                margin-top:15px;
+                line-height: 25px;
+                font-weight: bold;
+                font-family: almoni-dl-light"
+                [innerHtml]="book.summary">
+                
+            </div>
+
+            <!-- {{book.price}}</p> -->
+
+        </div>
+        <div class="col-3" *ngIf="book" style="display: flex;">
+            <div
+                style="background: #F2F2F2;
+        padding: 15px;
+        border-radius: 10px;height:100%;max-height:420px;width:100%;font-family: almoni-dl-light;font-size: 19px;line-height: 22px;">
+                במחיר מיוחד לחברי מועדון <br>
+                מחיר קטלוגי
+                <span style="color: #000;font-size: 22px;font-family: almoni-dl;">
+                    ₪{{book.price}} <br>
+                </span>
+                מחיר באתר
+                <span style="color: #048745;font-size: 35px;font-family: almoni-dl;">
+                    ₪{{book.price*85/100}} <br>
+                </span>
+
+                ₪ 34 .90 לחברי מועדון <br><br><br><br><br><br><br><br>
+                <div class="row" style="justify-content: space-between;font-family: almoni-dl;">
+                    <div class="col-3">
+                        בחר כמות
+                    </div>
+
+                    <div class="col-4">
+                        <div class="row">
+                            <div style="width:50px;height:50px;">
+                                <input type="text" style="height:100%;
+                            text-align: center;
+                            border: none;
+                            float: left;
+                            border-radius: 0 5px 5px 0;
+                            width: 100%;
+                            font-size: 30px;
+                            color: #989898;" value="1" size="2" maxlength="2">
+                            </div>
+                            <div style="width:50px;height:50px;">
+                                <div style="width:100%;height:50%;font-size: 24px;
+                            background-color: #048745;
+                            color:#fff;
+                            text-align: center;
+                            border-radius: 5px 0 0 0;">
+                                    +
+                                </div>
+                                <div style="width:100%;height:50%;background-color: #ccc;border-radius: 0 0 0 5px;
+                            color:#fff;
+                            text-align: center;
+                            font-size: 24px;
+                            ">
+                                    -
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br><br>
+                <button style="background: #048745;
+            color: #FFFFFF;
+            width: 260px;
+            width: 100%;
+            margin: auto;
+            display: block;
+            border: none;
+            margin-top: 10px;
+            height: 55px;
+            line-height: 55px;
+            font-size: 30px;
+            border-radius: 50px;
+            margin: 20px auto 10px;
+            -webkit-box-shadow: 0 3px 2px 0 rgb(0 0 0 / 20%);
+            box-shadow: 0 3px 2px 0 rgb(0 0 0 / 20%);
+            cursor: pointer;
+        ">
+                    הוסף לסל
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

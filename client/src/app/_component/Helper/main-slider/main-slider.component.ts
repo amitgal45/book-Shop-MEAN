@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MainSliderComponent implements OnInit {
   @Input() BOOKS: any; // decorate the property with @Input()
+  @Input() TITLE:string;
   _selectedBook:number[] = [0,1,2];
 
 

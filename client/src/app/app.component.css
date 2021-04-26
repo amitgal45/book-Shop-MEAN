@@ -22,7 +22,7 @@ overflow-x: hidden;
   .head{
 
       width:100vw;
-      height:13vh;
+      /* height:13vh; */
   }
 
   .main{
@@ -61,4 +61,10 @@ overflow-x: hidden;
     max-width: 1140px;
   }
 }
+
+@media (min-width: 1330px){
+  .container {
+      width: 1300px;
+  }
+  }
 

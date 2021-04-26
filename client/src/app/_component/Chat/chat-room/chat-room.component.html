@@ -1,0 +1,57 @@
+<div dir="rtl" class="row" *ngIf="messageList" style="border-top:2px solid #CCCCCC;border-bottom:1px solid #CCCCCC;margin-bottom:1%;
+    padding: 6px 0;
+    font-size: 19px;
+    line-height: 25px;
+    justify-content: center;
+">
+    <div class="container">
+        <p style="width: 60%;">
+            <a routerLink="/">דף הבית</a> -> צ'אטים -> amitgal
+        </p>
+    </div>
+
+
+
+</div>
+<div class="container">
+
+    <div class="row" dir="rtl" >
+
+
+        <div *ngFor="let message of messageList" class="col-10" >
+            <li  style="background-color: green;border-radius: 20px;padding: 5px;margin-bottom:5px;float:left" *ngIf="message.id==amitgal">
+                {{message.text}} - {{message.id}}
+            </li>
+            <li  style="background-color: rgb(0, 81, 119);border-radius: 20px;padding: 5px;margin-bottom:5px;float:right" *ngIf="message.id!=amitgal">
+                {{message.text}} - {{message.id}}
+            </li>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="row" dir="rtl" style="border-top:2px solid #CCCCCC;border-bottom:1px solid #CCCCCC;
+padding: 10px 0;
+font-size: 19px;
+position: fixed;
+  left: 15px;
+  bottom: 0px;
+  width: 100%;
+;
+">
+    <div class="container" >
+        <div class="row">
+
+
+            <div class="col-4" style="text-align: left;">
+                <button (click)="sendMessage()" style="height: 35px;padding:5px;font-family: 'almoni-dl'
+                ">שלח הודעה</button>
+            </div>
+            <div class="col-6">
+                <input [(ngModel)]="newMessage" (keyup)="$event.keyCode == 13 && sendMessage()"
+                    style="width: 100%;line-height:30px;text-align: right;font-family: 'almoni-dl'" />
+            </div>
+        </div>
+    </div>
+</div>

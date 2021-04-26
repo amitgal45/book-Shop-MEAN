@@ -8,10 +8,14 @@ import { Observable } from 'rxjs';
 export class BookService {
 
   private URLS = "http://localhost:8000"
+
   getLatestBooks():Observable<any> {
     return this.http.get(`${this.URLS}/api/book`)
   }
 
-  constructor(  private http: HttpClient,
-    ) { }
+  getBookById(id):Observable<any> {
+    return this.http.get(`${this.URLS}/api/book/${id}`)
+  }
+
+  constructor(private http: HttpClient) { }
 }
